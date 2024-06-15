@@ -39,8 +39,9 @@ cors_proxy.createServer({
     // 'x-forwarded-proto',
     // 'x-forwarded-port',
   ],
-  redirectSameOrigin: true,
+  redirectSameOrigin: true, // Ensure this is set to true
   httpProxyOptions: {
+    secure: false, // Add this line to disable SSL verification
     // Do not add X-Forwarded-For, etc. headers, because Heroku already adds it.
     xfwd: false,
   },
